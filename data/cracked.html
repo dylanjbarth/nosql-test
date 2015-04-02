@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"XQUHWFRXGwYEVFJVBAA="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:23,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(5),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(4),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:10,2:9,3:7,4:11,5:3,6:24,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){t("loader").features.ins=!0},{loader:"G9z0Bl"}],6:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1),i=t(2);t("loader").features.stn=!0,t(3),n.on("fn-start",function(t){var e=t[0];e instanceof Event&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof Event&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),i.on("fn-start",function(){this.bstStart=Date.now()}),i.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:10,2:9,3:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],7:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:24,2:25,ee:"QJf3ax",gos:"7eSDFh"}],8:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState"],"-")},{1:25,2:24,ee:"QJf3ax"}],9:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:25,2:24,ee:"QJf3ax"}],10:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:25,2:24,ee:"QJf3ax"}],11:[function(t,e){function n(){f.inPlace(this,p,"fn-")}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:7,2:25,ee:"QJf3ax"}],12:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=n(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=n(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var u=0;c>u;u++)e.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:13,3:11,4:7,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],13:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],14:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:23,2:24,handle:"D5DuLP"}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=f.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===u.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=f.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),f=c.document,u=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-632.min.js"},p=e.exports={offset:i(),origin:u,features:{}};f.addEventListener?(f.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(f.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:23,2:14,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],23:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],24:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],25:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:24,ee:"QJf3ax"}]},{},["G9z0Bl",4,12,6,5]);</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Learn more about open positions at iCracked!">
+	<meta property="og:title" content="Careers">
+	<meta property="og:type" content="website">
+	<meta property="og:img" content="https://www.icracked.com/public/img/logo-small.png">
+	<meta property="og:url" content="https://www.icracked.com/careers">
+	<meta property="og:description" content="Learn more about open positions at iCracked!">
+
+	<title>Careers</title>
+
+	<!--
+	Tell Phil to update greenhouse when the version of css is updated
+	-->
+	<link href="https://production-icracked.netdna-ssl.com/public/css/app.css?v=87" rel="stylesheet" type="text/css" media="all"/>
+
+	<!-- For third-generation iPad with high-resolution Retina display: -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://production-icracked.netdna-ssl.com/public/common/src/images/favicons/apple-touch-icon-144x144-precomposed.png">
+	<!-- For iPhone with high-resolution Retina display: -->
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://production-icracked.netdna-ssl.com/public/common/src/images/favicons/apple-touch-icon-114x114-precomposed.png">
+	<!-- For first- and second-generation iPad: -->
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://production-icracked.netdna-ssl.com/public/common/src/images/favicons/apple-touch-icon-72x72-precomposed.png">
+	<!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+	<link rel="apple-touch-icon-precomposed" href="https://production-icracked.netdna-ssl.com/public/common/src/images/favicons/apple-touch-icon-precomposed.png">
+
+	<!-- Dashboard Specific CSS -->
+		
+	<meta name="apple-itunes-app" content="app-id=811674056">
+
+	<script src="//cdn.optimizely.com/js/146767752.js"></script>
+
+<!-- Pingdom -->
+<script>
+var _prum = [['id', '54299367abe53dc20ba7b50b'],
+         ['mark', 'firstbyte', (new Date()).getTime()]];
+(function() {
+    var s = document.getElementsByTagName('script')[0]
+      , p = document.createElement('script');
+
+    p.async = 'async';
+    p.src = '//rum-static.pingdom.net/prum.min.js';
+    s.parentNode.insertBefore(p, s);
+})();
+</script>
+<!-- end pingdom -->
+			<link href="https://www.icracked.com/careers" hreflang="en-us" rel="alternate">
+			<link href="https://www.icracked.co.uk/careers" hreflang="en-gb" rel="alternate">
+			<link href="https://de.icracked.com/careers" hreflang="de-de" rel="alternate">
+	</head>
+<body id="pCareers">
+
+<ul id="drop1" class="f-dropdown">
+	<li>
+		<a href="https://www.icracked.com/user">Account</a>
+	</li>
+			<li>
+		<a href="https://www.icracked.com/logout">Logout</a>
+	</li>
+</ul>
+<!--
+<div class="contain-to-grid">
+	<nav class="top-bar">
+		<ul class="top-bar-main">
+			<li class="nav-logo"><a href="/" title="Home"></a></li>
+			<li class="toggle-topbar ">
+				<a href="#">
+					<span></span>
+				</a>
+			</li>
+		</ul>
+		<section class="top-bar-section">
+			<ul class="left hide-for-small">
+				<li>
+					<a href="https://www.icracked.com/repair" title="Repair Your iPhone, Repair Your iPad, Repair Your iPod" class="top-bar-section-links"><span class="ss-icon ss-settings"></span>Repair</a>
+				</li>
+				<li>
+					<a href="https://www.icracked.com/sell" title="Sell Your iPhone, Sell Your iPad, Sell Your iPod" class="top-bar-section-links"><span class="ss-icon ss-pricetag"></span>Sell</a>
+				</li>
+				<li>
+					<a href="https://shop.icracked.com" class="top-bar-section-links">
+						<span class="ss-icon ss-basket"></span>Shop
+					</a>
+				</li>
+			</ul>
+			<ul class="right">
+				<li class="hide-for-small">
+											<a href="https://www.icracked.com/login">iTech Login</a>
+									</li>
+				<ul class="nav-float button-group show-for-small even-3">
+					<li>
+						<a href="https://www.icracked.com/repair" title="Repair Your iPhone, Repair Your iPad, Repair Your iPod" class="ss-settings">Repair</a>
+					</li>
+					<li>
+						<a href="https://www.icracked.com/sell" title="Sell Your iPhone, Sell Your iPad, Sell Your iPod" class="ss-pricetag">Sell</a>
+					</li>
+					<li>
+						<a href="https://www.icracked.com/warranty#protect" class="ss-heartmobile">Protect</a>
+					</li>
+				</ul>
+				<ul class="nav-float button-group show-for-small even-3">
+					<li>
+						<a href="https://shop.icracked.com" title="iCracked Shop" class="ss-basket">Shop</a>
+					</li>
+					<li>
+						<a href="tel://1-877-700-0349" class="ss-phone">Call</a>
+					</li>
+					<li>
+													<a href="https://www.icracked.com/login" title="Login" class="ss-user">iTech Login</a>
+											</li>
+				</ul>
+							</ul>
+		</section>
+	</nav>
+</div>
+-->
+
+<header>
+	<hgroup id="logo">
+		<a href="/" class="navigation__logo"><i class="svg-ico-logo"></i></a>
+	</hgroup>
+	<i class="mobile navigation--menu-icon"></i>
+	<div class="navigation">
+		<nav>
+			<a href="https://www.icracked.com/repair" title="Repair Your iPhone, Repair Your iPad, Repair Your iPod"  class="navigation__site-link">Repair</a>
+			<a href="https://www.icracked.com/sell" title="Sell Your iPhone, Sell Your iPad, Sell Your iPod" class="navigation__site-link german-hide">Sell</a>
+			<a href="https://shop.icracked.com" class="navigation__site-link german-hide">Shop</a>
+			<!--<a class="navigation__site-link--more navigation__site-link" href="#">More</a>-->
+			<a href="http://info.icracked.com/business-services" title="Enterprise for your devices" class="navigation__site-link german-hide">Enterprise</a>
+			<a href="https://www.icracked.com/apply" class="navigation__actions--itech navigation__site-link">Become an iTech</a>
+		</nav>
+
+		<div class="navigation__actions">
+							<span class="navigation__actions--login">Advantage Membership <a href="https://www.icracked.com/login?redirect=%2Fuser%2Fadvantage" class="navigation__actions--advantage">Log In</a></span>
+						<div class="regional__location regional__location--header">
+				<select class="locale-dropdown notranslate" name="locale">
+			<option class="SL_norewrite" value="https://www.icracked.com" selected>
+			English (US)		</option>
+			<option class="SL_norewrite" value="https://www.icracked.co.uk" >
+			English (UK)		</option>
+			<option class="SL_norewrite" value="https://de.icracked.com" >
+			Deutsch		</option>
+	</select>
+			</div>
+		</div>
+
+	</div>
+</header>
+
+<!-- Header Nav -->
+<div id="main-nav-drop" class="nav__dropdown">
+	<i class="nav__dropdown--close"></i>
+	<div class="nav__dropdown__wrapper">
+				<div class="regional__location">
+			<select class="locale-dropdown notranslate" name="locale">
+			<option class="SL_norewrite" value="https://www.icracked.com" selected>
+			English (US)		</option>
+			<option class="SL_norewrite" value="https://www.icracked.co.uk" >
+			English (UK)		</option>
+			<option class="SL_norewrite" value="https://de.icracked.com" >
+			Deutsch		</option>
+	</select>
+		</div>
+		<div class="main nav__dropdown__linkList">
+			<h3>Main</h3>
+			<a href="https://www.icracked.com/repair">Repair Services</a>
+			<a href="https://www.icracked.com/sell">Sell Services</a>
+			<a href="http://shop.icracked.com" class="german-hide">Shop</a>
+			<a href="http://info.icracked.com/business-services" class="german-hide">Enterprise</a>
+			<a href="https://www.icracked.com/login">Login</a>
+		</div>
+		<div class="nav__dropdown__linkList">
+			<h3>Support</h3>
+			<a href="http://support.icracked.com/hc/en-us">Support</a>
+			<a href="https://www.icracked.com/contact-us">Contact Us</a>
+			<a href="https://www.icracked.com/warranty">Lifetime Warranty</a>
+		</div>
+		<div class="nav__dropdown__linkList">
+			<h3>Company</h3>
+			<a href="https://www.icracked.com/about-us">About Us</a>
+			<a href="https://www.icracked.com/careers">Careers</a>
+			<a href="https://www.icracked.com/media">In the Media</a>
+			<a href="https://www.icracked.com/apply">Become an iTech</a>
+		</div>
+		<div class="nav__dropdown__linkList">
+			<h3>Stay in Touch</h3>
+			<a href="http://blog.icracked.com" class="german-hide">Blog</a>
+			<a href="https://twitter.com/iCrackedUS">Twitter</a>
+			<a href="https://www.facebook.com/iCrackedUS">Facebook</a>
+			<a href="http://instagram.com/icracked">Instagram</a>
+		</div>
+	</div>
+</div>
+<!-- End Header Nav -->
+
+<div class="companyHeader">
+	<div class="companyHeader__container large-12">
+		<h1 class="companyHeader__title">Work at iCracked</h1>
+		<h2 class="companyHeader__subtitle">Help define what a great experience really means.</h2>
+	</div>
+</div>
+
+<div class="row">
+	<div class="careersInfo large-9 large-centered columns">
+		<h5 class="careersInfo__content">At iCracked, we strive to make every interaction with the people who use our services as fantastic as possible. If you love solving complex problems, while making people smile because of stellar customer service, then you'll be right at home! </h5>
+		<p><a href="#openings" class="careersInfo__link">See where you fit in.</a></p>
+	</div>
+</div>
+
+<div class="row">
+	<div class="careersMinded large-12 columns">
+		<h2 class="careersMinded__title">We're a team of like-minded individuals</h2>
+		<div class="minded--creative large-4">
+			<h5 class="minded--creative__title">Creative</h5>
+			<p class="minded--creative__content">Being curious, inventive, and able to go outside the standard rule set.</p>
+		</div>
+		<div class="minded--passion large-4">
+			<h5 class="minded--passion__title">Passionate</h5>
+			<p class="minded--creative__content">To go 'the extra mile' in all areas of our company is expected. We love what we do and you should too.</p>
+		</div>
+		<div class="minded--innovative large-4">
+			<h5 class="minded--innovative__title">Innovative</h5>
+			<p class="minded--creative__content">We're constantly pushing the limits on what people expect from our service.</p>
+		</div>
+	</div>
+</div>
+
+<div class="careersQuote">
+	<div class="careersQuote__Container">
+		<h2 class="careersQuote__title">"Our whole goal is to make this [caring for your device] an extremely seamless process for our customers" </h2>
+		<p class="careersQuote__title--small">- AJ Forsythe CEO</p>
+	</div>
+</div>
+
+<a id="openings"></a>
+<div class="row">
+	<div class="careerType large-12">
+		<h2 class="center">There's room for you!</h2>
+
+		<div class="careerType__column--left column large-6">
+			<div class="careerType__department">
+				<h4 class="careerType__title">Engineering</h4>
+					<p class="careerType__content"><a href="https://icracked.com/careers/job?gh_jid=36814">Back-End Developer</a><br />
+							<span class="careerType__content--small">San Francisco, CA (Soma)</span></p><p class="careerType__content"><a href="https://icracked.com/careers/job?gh_jid=37446">Dev Ops Architect </a><br />
+							<span class="careerType__content--small">San Francisco, CA (Soma)</span></p><p class="careerType__content"><a href="https://icracked.com/careers/job?gh_jid=6133">Front-End Developer</a><br />
+							<span class="careerType__content--small">San Francisco, CA (Soma)</span></p><p class="careerType__content"><a href="https://icracked.com/careers/job?gh_jid=44770">Full Stack Engineer</a><br />
+							<span class="careerType__content--small">San Francisco, CA (Soma)</span></p><p class="careerType__content"><a href="https://icracked.com/careers/job?gh_jid=6130">Lead iOS Developer</a><br />
+							<span class="careerType__content--small">Redwood City, CA - HQ</span></p><p class="careerType__content"><a href="https://icracked.com/careers/job?gh_jid=37623">R&D Intern</a><br />
+							<span class="careerType__content--small">Redwood City HQ</span></p><p class="careerType__content"><a href="https://icracked.com/careers/job?gh_jid=36863">VP of Engineering</a><br />
+							<span class="careerType__content--small">San Francisco, CA (Soma)</span></p>			</div>
+
+			<div class="careerType__department">
+				<h4 class="careerType__title">Human Capital</h4>
+					<p class="careerType__content"><a href="https://icracked.com/careers/job?gh_jid=29829">Recruitment Coordinator</a><br />
+							<span class="careerType__content--small">Redwood City HQ</span></p>			</div>
+
+			<div class="careerType__department">
+				<h4 class="careerType__title">Customer Support</h4>
+					<p class="careerType__content"><a href="https://icracked.com/careers/job?gh_jid=19721">Appointment Scheduling Representative</a><br />
+							<span class="careerType__content--small">Redwood City HQ</span></p><p class="careerType__content"><a href="https://icracked.com/careers/job?gh_jid=6034">Customer Advocate Guru</a><br />
+							<span class="careerType__content--small">Redwood City, CA - HQ</span></p><p class="careerType__content"><a href="https://icracked.com/careers/job?gh_jid=27241">East Coast Remote Scheduling Assistant</a><br />
+							<span class="careerType__content--small">Telecommute</span></p>			</div>
+
+			<div class="careerType__department">
+				<h4 class="careerType__title">reCommerce</h4>
+					<p class="careerType__content"><a href="https://icracked.com/careers/job?gh_jid=43847">Purchasing Assistant</a><br />
+							<span class="careerType__content--small">HQ Warehouse</span></p>			</div>
+
+			<div class="careerType__department">
+				<h4 class="careerType__title">Operations</h4>
+					<p class="careerType__content"><a href="https://icracked.com/careers/job?gh_jid=52115">Community Manager</a><br />
+							<span class="careerType__content--small">Redwood City HQ</span></p><p class="careerType__content"><a href="https://icracked.com/careers/job?gh_jid=33772">Fulfillment Center Associate</a><br />
+							<span class="careerType__content--small">HQ Warehouse</span></p><p class="careerType__content"><a href="https://icracked.com/careers/job?gh_jid=9398">Operations Team (Fulfillment Center)</a><br />
+							<span class="careerType__content--small">Redwood City, CA</span></p><p class="careerType__content"><a href="https://icracked.com/careers/job?gh_jid=28644">Trade-In Operations Team (Fulfillment Center)</a><br />
+							<span class="careerType__content--small">Redwood City HQ</span></p>			</div>
+		</div>
+
+		<div class="careerType__column--right column large-6">
+			<div class="careerType__department">
+				<h4 class="careerType__title">Design</h4>
+					<p class="careerType__content"><a href="https://icracked.com/careers/job?gh_jid=44761">Product Designer </a><br />
+							<span class="careerType__content--small">Redwood City HQ or San Francisco (Soma)</span></p>			</div>
+
+			<div class="careerType__department">
+				<h4 class="careerType__title">Finance &amp; Legal</h4>
+					<p class="careerType__content"><a href="https://icracked.com/careers/job?gh_jid=50933">AP Payroll Accountant</a><br />
+							<span class="careerType__content--small">Redwood City, CA - HQ</span></p><p class="careerType__content"><a href="https://icracked.com/careers/job?gh_jid=55857">Financial Analyst </a><br />
+							<span class="careerType__content--small">Redwood City HQ</span></p>			</div>
+
+			<div class="careerType__department">
+				<h4 class="careerType__title">Business &amp; Account Management</h4>
+					<p class="careerType__content"><a href="https://icracked.com/careers/job?gh_jid=6135">Expansion Associate</a><br />
+							<span class="careerType__content--small">Redwood City, CA - HQ</span></p><p class="careerType__content"><a href="https://icracked.com/careers/job?gh_jid=27246">iTech Recruiter </a><br />
+							<span class="careerType__content--small">Redwood City HQ</span></p><p class="careerType__content"><a href="https://icracked.com/careers/job?gh_jid=16552">VP of Enterprise Sales</a><br />
+							<span class="careerType__content--small">Redwood City, CA - HQ</span></p>			</div>
+
+			<div class="careerType__department">
+				<h4 class="careerType__title">Marketing &amp; Communications</h4>
+					<p class="careerType__content"><a href="https://icracked.com/careers/job?gh_jid=48880">Chief Marketing Officer</a><br />
+							<span class="careerType__content--small">Redwood City HQ</span></p><p class="careerType__content"><a href="https://icracked.com/careers/job?gh_jid=28713">eCommerce Manager</a><br />
+							<span class="careerType__content--small">Redwood City HQ</span></p><p class="careerType__content"><a href="https://icracked.com/careers/job?gh_jid=37614">Internet Marketing Manager</a><br />
+							<span class="careerType__content--small">Redwood City HQ</span></p><p class="careerType__content"><a href="https://icracked.com/careers/job?gh_jid=28590">Senior Email Marketer</a><br />
+							<span class="careerType__content--small">Redwood City, CA</span></p><p class="careerType__content"><a href="https://icracked.com/careers/job?gh_jid=6497">Social Media Marketing Associate</a><br />
+							<span class="careerType__content--small">HQ - Redwood City, CA</span></p>			</div>
+
+			<div class="careerType__department">
+				<h4 class="careerType__title">International Opportunities</h4>
+					<p class="careerType__content"><a href="https://icracked.com/careers/job?gh_jid=56905">Brand Manager</a><br />
+							<span class="careerType__content--small">London HQ</span></p><p class="careerType__content"><a href="https://icracked.com/careers/job?gh_jid=36333">Localization/Translation Expert</a><br />
+							<span class="careerType__content--small">Berlin HQ</span></p><p class="careerType__content"><a href="https://icracked.com/careers/job?gh_jid=50751">Online Marketing Manager</a><br />
+							<span class="careerType__content--small">Berlin HQ</span></p>			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="careersPerks">
+		<h2 class="center">The Perks of iCracked</h2>
+
+		<div class="large-12 careerPerks__row">
+			<div class="large-4 column perkItem perkItem--benefits">
+				<h4 class="perkItem__title">Full Health Benefits</h4>
+				<p class="perkItem__content">Rest assured you'll be covered with Health, Dental, and Vision coverage when you become a member of the team.</p>
+			</div>
+			<div class="large-4 column perkItem perkItem--dinner">
+				<h4 class="perkItem__title">Catered Lunch &amp; Dinner</h4>
+				<p class="perkItem__content">Forget the sack lunch as we've got excellent meals for you to enjoy day in and day out!</p>
+			</div>
+			<div class="large-4 column perkItem perkItem--hardware">
+				<h4 class="perkItem__title">Hardware of Your Choice</h4>
+				<p class="perkItem__content">We want everyone performing at their top levels, so we do our best to hook everyone up with the tools they need.</p>
+			</div>
+		</div>
+
+		<div class="large-12 careerPerks__row">
+			<div class="large-4 column perkItem perkItem--device">
+				<h4 class="perkItem__title">Discounted Devices</h4>
+				<p class="perkItem__content">We love Apple and thus we love all of their products. We want you to have the ones you want and we'll help out with that!</p>
+			</div>
+			<div class="large-4 column perkItem perkItem--wellness">
+				<h4 class="perkItem__title">Wellness Stipend</h4>
+				<p class="perkItem__content">Staying fresh is an important aspect to succeeding on the team, so we give everyone a wellness stipend</p>
+			</div>
+			<div class="large-4 column perkItem perkItem--anyperk">
+				<h4 class="perkItem__title">AnyPerk Membership</h4>
+				<p class="perkItem__content">We've teamed up with AnyPerk to get all our team members huge discounts on an array of products & services.</p>
+			</div>
+		</div>
+
+		<div class="large-12 careerPerks__row">
+			<div class="large-4 column perkItem perkItem--outing">
+				<h4 class="perkItem__title">Frequent Team Outings</h4>
+				<p class="perkItem__content">All work and no play can put a strain on the team and that's why we try to get out as a group as much as possible.</p>
+			</div>
+			<div class="large-4 column perkItem perkItem--yacht">
+				<h4 class="perkItem__title">Company Yacht</h4>
+				<p class="perkItem__content">The rougher the seas, the smoother we sail. Ahoy!</p>
+			</div>
+			<div class="large-4 column perkItem perkItem--kitchen">
+				<h4 class="perkItem__title">Fully Stocked Kitchen</h4>
+				<p class="perkItem__content">When you need a bite to eat or a drink between meals, we've got all you'll ever want in our kitchen!</p>
+			</div>
+		</div>
+
+		</div>
+	</div>
+</div>
+
+<div class="careersLocation">
+	<div class="row">
+		<div class="careersLocation__Container larger-12">
+			<div class="large-7 column">
+				<h5 class="careersLocation__subtitle">Located in the heart of Silicon Valley</h5>
+				<h2 class="careersLocation__title">Redwood City, California</h2>
+			</div>
+			<div class="large-5 column">
+				<ul class="careersLocation__list">
+					<li>20 minutes from San Francisco</li>
+					<li>Cal Train Accessible (1/2 mile away)</li>
+					<li>25 minutes from San Jose</li>
+					<li>Lakefront Office</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="careerOffice">
+		<h2 class="center">Our Humble Abode</h2>
+
+		<div class="slider careersSlider">
+			<div><img src="https://production-icracked.netdna-ssl.com/public/img/careers-slider1.jpg" /></div>
+			<div><img src="https://production-icracked.netdna-ssl.com/public/img/careers-slider2.jpg" /></div>
+			<div><img src="https://production-icracked.netdna-ssl.com/public/img/careers-slider4.jpg" /></div>
+			<div><img src="https://production-icracked.netdna-ssl.com/public/img/careers-slider5.jpg" /></div>
+			<div><img src="https://production-icracked.netdna-ssl.com/public/img/careers-slider6.jpg" /></div>
+			<div><img src="https://production-icracked.netdna-ssl.com/public/img/careers-slider7.jpg" /></div>
+			<div><img src="https://production-icracked.netdna-ssl.com/public/img/careers-slider8.jpg" /></div>
+		</div>
+	</div>
+
+	<p class="careerOffice__content center">Ready to join the team? <a href="#openings">Check out all of our openings!</a></p>
+</div><!-- jsDataSet -->
+
+<!-- Footer -->
+<footer class="footerMain">
+	<div class="footerMain__wrapper--top large-12 column">
+		<div class="footerMain__textBox">
+			<h3 class="footerText__title"><a href="https://www.icracked.com/repair" class="footerText__titleLink">Repair Your Device</a></h3>
+			<p class="footerText__content">The easiest and fastest way to have your device repaired today.</p>
+			<a href="https://www.icracked.com/repair" class="footerText__link">Request a Quote</a>
+		</div>
+		<div class="footerMain__textBox german-hide">
+			<h3 class="footerText__title"><a href="https://www.icracked.com/sell" class="footerText__titleLink">Sell Your Device</a></h3>
+			<p class="footerText__content">Select your device and we'll tell you how much you can make.</p>
+			<a href="https://www.icracked.com/sell" class="footerText__link">See My Device Value</a>
+		</div>
+		<div class="footerMain__textBox">
+			<h3 class="footerText__title"><a href="http://support.icracked.com/hc/en-us" class="footerText__titleLink">Support Center</a></h3>
+			<p class="footerText__content">Visit the support page for help, and find answers to common questions.</p>
+			<a href="http://support.icracked.com/hc/en-us" target="_blank" class="footerText__link">Visit Support</a>
+		</div>
+		<div class="footerMain__textBox footerMain__textBox--last">
+			<h3 class="footerText__title"><a href="https://www.icracked.com/apply" class="footerText__titleLink">Become an iTech</a></h3>
+			<p class="footerText__content">Join a growing family and build your own business!</p>
+			<a href="https://www.icracked.com/apply" class="footerText__link">Apply Today</a>
+		</div>
+		<div class="footerMain__textBox footerMain__textBox--moreOption">
+			<h3 class="footerText__title"><a class="footerText__titleLink">More Options</a></h3>
+			<ul style="display:none;" class="footerMain__moreOptions">
+				<li><a href="https://www.icracked.com/about-us" class="moreOptions__link">About Us</a></li>
+				<li><a href="https://www.icracked.com/careers" class="moreOptions__link">Careers</a></li>
+				<li><a href="https://www.icracked.com/media" class="moreOptions__link">In the Media</a></li>
+				<li><a href="http://blog.icracked.com/" target="_blank" class="moreOptions__link">Blog</a></li>
+				<li><a href="https://www.icracked.com/contact-us" class="moreOptions__link">Contact Us</a></li>
+				<li><a href="https://www.icracked.com/login" class="moreOptions__link">Log In</a></li>
+				<li><a href="https://www.icracked.com/warranty" class="moreOptions__link">Lifetime Warranty</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="footerMain__wrapper--middle large-12 column">
+		<div class="footerMain__social">
+			<ul class="footerMain__socialList usa-hide">
+				<li><a href="https://instagram.com/iCracked_de/" target="_blank"><i class="svg-ico-instagram"></i></a></li>
+				<li><a href="https://www.facebook.com/icrackedDE" target="_blank"><i class="svg-ico-facebook"></i></a></li>
+				<li><a href="https://twitter.com/icrackedde" target="_blank"><i class="svg-ico-twitter"></i></a></li>
+			</ul>
+			<ul class="footerMain__socialList german-hide">
+				<li><a href="http://instagram.com/icracked" target="_blank"><i class="svg-ico-instagram"></i></a></li>
+				<li><a href="https://www.facebook.com/iCrackedUS" target="_blank"><i class="svg-ico-facebook"></i></a></li>
+				<li><a href="https://twitter.com/iCrackedUS" target="_blank"><i class="svg-ico-twitter"></i></a></li>
+			</ul>
+		</div>
+		<ul class="footerMain__moreOptions">
+			<li><a href="https://www.icracked.com/about-us">About Us</a></li>
+			<li><a href="https://www.icracked.com/careers">Careers</a></li>
+			<li class="german-hide"><a href="http://info.icracked.com/business-services">Enterprise</a></li>
+			<li><a href="https://www.icracked.com/media">In the Media</a></li>
+			<li class="german-hide"><a href="http://blog.icracked.com/" target="_blank">Blog</a></li>
+			<li><a href="https://www.icracked.com/contact-us">Contact Us</a></li>
+			<li><a href="https://www.icracked.com/login">iTech Login</a></li>
+			<li><a href="https://www.icracked.com/warranty">Lifetime Warranty</a></li>
+			<li><a href="https://www.icracked.com/impressum" class="icr-footer-german">Impressum</a></li>
+		</ul>
+	</div>
+	<div class="footerMain--wrapper--bottom large-12 column">
+		<div class="footerMain__terms">
+			<a href="/termsofservice" class="terms__links">Terms of Service</a>&emsp;<a href="/privacy-policy" class="terms__links">Privacy Policy</a>
+			<p class="terms__copyright">
+				&copy; 2009-2015 iCracked, Inc.
+			</p>
+		</div>
+		<div class="footerMain__regional">
+			<!-- <div class="regional__location">
+				<select class="locale-dropdown notranslate" name="locale">
+			<option class="SL_norewrite" value="https://www.icracked.com" selected>
+			English (US)		</option>
+			<option class="SL_norewrite" value="https://www.icracked.co.uk" >
+			English (UK)		</option>
+			<option class="SL_norewrite" value="https://de.icracked.com" >
+			Deutsch		</option>
+	</select>
+			</div> -->
+
+			<h5 class="regional__title">Made with <a href="https://www.icracked.com/careers" class="regional__heart" target="_blank">&#x2665;</a> in Redwood City, CA</h5>
+			<p class="regional__content">iCracked is an Independent Service Company and is no way affiliated with Apple, Inc. But we love them!</p>
+		</div>
+	</div>
+</footer>
+
+<script type="text/javascript" src="https://production-icracked.netdna-ssl.com/public/js/vendor/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<script type="text/javascript" src="https://production-icracked.netdna-ssl.com/public/js/app.min.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&sensor=false"></script>
+
+
+<script type="text/javascript" src="https://production-icracked.netdna-ssl.com/public/js/icracked.js?v=76"></script>
+<script type="text/javascript">
+	var userData = false;
+		iCracked.init({
+		developer: false,
+		user: userData,
+		siteUrl: "https://www.icracked.com",
+		APIUrl: "https://www.icracked.com/v2/api"
+	})
+
+	$(function() {
+		$(document).foundation(null,null,null,null,true);
+
+		$('img.has-alt').each(function() {
+			$('<img/>')[0].src = this.src;
+
+			$(this).on('mouseover', function(e) {
+				$(this).data('original-src', this.src);
+				this.src = this.src.replace('.jpg', '2.jpg');
+
+				$(this).on('mouseout', function() {
+					this.src = $(this).data('original-src');
+					$(this).data('original-src', '');
+					$(this).off('mouseout');
+				});
+			});
+		});
+	});
+</script>
+
+
+<script data-cfasync="false" type="text/javascript">
+	var gaClientId;
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-17574902-4', 'icracked.com');
+	ga('require', 'displayfeatures');
+		
+	// Optimizely Universal Analytics Integration Code Here
+	window.optimizely = window.optimizely || [];
+	window.optimizely.push('activateUniversalAnalytics');
+
+	ga('send', 'pageview');
+
+	ga(function(tracker) {
+	    gaClientId = tracker.get('clientId');
+	});
+</script>
+
+<script>
+// Optimizely Universal Analytics Integration Code Here
+window.optimizely = window.optimizely || [];
+window.optimizely.push('activateUniversalAnalytics');
+</script>
+
+
+<!--<script src="https://production-icracked.netdna-ssl.com/public/common/src/scripts/debuggify-0.2.0.js" async></script>-->
+
+<!-- Slick Carousel Testing -->
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.3.6/slick.min.js" async></script>
+
+
+
+<script>
+<!-- Zopim Live Chat Script-->
+(function (window) {
+
+	window.icr.environmentPromise.then(function (data) {
+
+		if(!data.isCustomerView) return;
+
+		// generate script tag for zopim
+		function loadLiveChat() {
+			var ua = navigator.userAgent.toLowerCase(),
+			platform = navigator.platform.toLowerCase();
+			platformName = ua.match(/ip(?:ad|od|hone)/) ? 'ios' : (ua.match(/(?:webos|android)/) || platform.match(/mac|win|linux/) || ['other'])[0],
+			isMobile = /ios|android|webos/.test(platformName);
+			if (!isMobile) {
+				window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+				d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+				_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute('charset','utf-8');
+				$.src='//v2.zopim.com/?2EDTJPLRllBDLOOQ2MauM9k7xyjTXJVK';z.t=+new Date;$.
+				type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
+			}
+		}
+		// configure live chat settings
+		function configureChatSettings(settings) {
+			$zopim(function () {
+				//$zopim.livechat.departments.setVisitorDepartment('Germany-chat');
+				$zopim.livechat.concierge.setName(settings.concierge.name);
+				$zopim.livechat.concierge.setTitle(settings.concierge.title);
+				$zopim.livechat.setGreetings(settings.greetings);
+				$zopim.livechat.window.setTitle(settings.windowTitle);
+				$zopim.livechat.setLanguage(settings.languageAcronym);
+			});
+		}
+		
+		atomic.get('/public/common/src/json/zopim-settings.json').success(function (settings) {
+			loadLiveChat();
+			configureChatSettings(settings);
+		});
+
+	});
+
+})(window);</script>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PDFGGM"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PDFGGM');</script>
+<!-- End Google Tag Manager -->
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"5c5d427a72","applicationID":"5403731","transactionName":"YlUEZ0MHC0EDUUBfC1sfJUZCEgpfTVFVRAFQQhU=","queueTime":0,"applicationTime":105,"atts":"ThIHEQsdGE8=","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-632.min.js"}</script></body>
+</html>
